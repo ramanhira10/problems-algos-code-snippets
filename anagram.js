@@ -3,6 +3,7 @@
  * @param {*} string1 
  * @param {*} string2 
  * @returns true if the string is anagram
+ * time complexity is linear O(n)
  */
 
 function isAnagram (string1, string2) {
