@@ -8,6 +8,12 @@
     - Should not use new Array, List etc
     - can use indexes
     - Array index order should be maintained
+
+    AWS
+
+    Microservices
+
+    Cart to order confirmation workflow
  */
 
 const input = [1, 3, 3, 4, 6, 9, 9, 9, 12, 18];
