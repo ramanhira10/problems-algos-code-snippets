@@ -21,16 +21,18 @@ const input = [1, 3, 3, 4, 6, 9, 9, 9, 12, 18];
 const replaceDuplicates = inputArr => {
     let outputArray = [];
     const maskedElements = [];
+    let lastAddedElement = -1;
 
     inputArr.forEach(eachElement => {
-        if(outputArray.indexOf(eachElement) === -1) {
-            outputArray.push(eachElement)
+        if(eachElement !== lastAddedElement) {
+            outputArray.push(eachElement);
+            lastAddedElement = eachElement;
         } else {
             maskedElements.push(0);
         }
     });
 
-    return [...outputArray.sort((a, b) => a - b), ...maskedElements];
+    return [...outputArray, ...maskedElements];
 };
 
 const maskedArray = replaceDuplicates(input);
