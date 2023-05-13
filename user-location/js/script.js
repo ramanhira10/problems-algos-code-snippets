@@ -14,3 +14,13 @@ button.addEventListener('click', () => {
 
     });
 });
+
+let text = "Hello My name is Raman Hira";
+
+let utterance = new SpeechSynthesisUtterance(text);
+
+
+document.onclick = () => {
+    console.log('going to speak');
+    speechSynthesis.speak(utterance);
+}
