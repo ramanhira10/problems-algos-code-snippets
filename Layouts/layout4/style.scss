@@ -1,0 +1,89 @@
+$gap: 4vh;
+$padding: 4vh;
+$color: #48CAE4;
+
+$bp: (
+    mobile: 480px,
+    tablet: 768px,
+    desktop: 1440px
+);
+
+@mixin query ($display) {
+    @each $key, $value in $bp {
+
+        @if ($display == $key) {
+            @media (max-width: $value) {
+                @content;
+            }
+        }
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    body {
+        width: 100%;
+        min-height: 100vh;
+        font-family: sans-serif;
+        font-size: 45px;
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    padding: $padding;
+    gap: $gap;
+}
+
+[class ^="block-"] {
+    display: flex;
+    flex-direction: row;
+    gap: $gap;
+
+    height: (100vh - ($gap * 2) - ($padding * 2) / 3);
+
+    @include query (mobile) {
+        flex-direction: column;
+    }
+}
+
+[class ^="box-"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1vh solid $color;
+    border-radius: 10px;
+    background-color: #c1c1c1;
+}
+
+.box-1 {
+    flex-basis: 100%;
+}
+
+.box-2, .box-5 {
+    flex-basis: 70%;
+}
+
+.box-3, .box-4 {
+    flex-basis: 30%;
+}
+
+@include query (mobile) {
+    .block-2 {
+        height: (100vh * 2) / 3;
+    }
+
+    .block-3 {
+        flex-direction: row;
+    }
+
+    // Selecting B, E, C, D
+
+    .box-2, .box-3, .box-4, .box-5 {
+        flex-basis: 50%;
+    }
+}
