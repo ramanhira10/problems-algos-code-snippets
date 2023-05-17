@@ -56,9 +56,11 @@ $bp: (
 }
 
 .block-1 {
+    //will occupy 20% of the available width
     flex-grow: 2;
 }
 
 .block-2 {
+    //will occupy 80% of the available width
     flex-grow: 8;
 }
